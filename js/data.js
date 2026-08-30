@@ -116,7 +116,7 @@ const ARCTECH_DATA = {
       categoryLabel: "3D Stone Carving",
       material: "Imported Statuario Italian Marble",
       technique: "Multi-pass 3D Ball-Nose CNC Milling",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      image: "assets/images/cnc_marble_carving.jpg",
       description: "Organic parametric wave relief carved directly into monolithic Italian marble for a luxury living room focal backdrop."
     },
     {
@@ -124,10 +124,10 @@ const ARCTECH_DATA = {
       title: "Geometric Brass-Tipped Jali Screen",
       category: "jali",
       categoryLabel: "Decorative Panels",
-      material: "High-Density Moisture-Resistant HDF + PU Finish",
+      material: "High-Density Moisture-Resistant HDF + Champagne Brass",
       technique: "Precision 2D Profile Cutting + 45° Chamfer",
-      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
-      description: "Custom geometric partition screen dividing dining and lounge areas with integrated brass accents."
+      image: "assets/images/cnc_jali_partition.jpg",
+      description: "Custom geometric partition screen dividing dining and lounge areas with integrated brass accents and backlit shadows."
     },
     {
       id: "cnc-wood-1",
@@ -136,8 +136,8 @@ const ARCTECH_DATA = {
       categoryLabel: "Wood & Fluted Paneling",
       material: "Grade-A Natural Burmese Teak",
       technique: "Custom Radiused Tool Milling + Hand Oil Rub",
-      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
-      description: "Precision CNC milled fluted wood paneling with concealed wire raceways for master bed accent wall."
+      image: "assets/images/cnc_fluted_paneling.jpg",
+      description: "Precision CNC milled fluted wood paneling with concealed wire raceways and warm integrated linear cove lighting."
     },
     {
       id: "cnc-corian-1",
@@ -146,28 +146,28 @@ const ARCTECH_DATA = {
       categoryLabel: "3D Stone & Solid Surface",
       material: "Translucent Solid Surface / Corian",
       technique: "Variable Depth CNC Relief with LED Backlight",
-      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-      description: "Subtle topographic carving that reveals glowing atmospheric gradient depth when backlit."
+      image: "assets/images/cnc_backlit_corian.jpg",
+      description: "Subtle topographic carving that reveals glowing atmospheric gradient depth when backlit in luxury commercial and lounge spaces."
     },
     {
       id: "cnc-arch-1",
-      title: "Curved Sculptural Reception Feature",
+      title: "Heavy-Duty CNC Stone Milling Setup",
       category: "arch",
       categoryLabel: "Architectural Feature",
-      material: "Segmented Stone Veneer + CNC Skeleton Substructure",
-      technique: "Interlocking CNC Ribs & Precision Skinning",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-      description: "Sculptural corporate reception statement piece fabricated with in-house CNC ribs and flush stone cladding."
+      material: "Natural Travertine & CNC Diamond Cutters",
+      technique: "Multi-Axis Machining with Liquid Cooling",
+      image: "assets/images/cnc_pillar.jpg",
+      description: "In-house precision milling at our Minar Tower workshop, sculpting complex 3D contours with zero chipping."
     },
     {
       id: "cnc-panel-2",
-      title: "Parametric Acoustic Ceiling Baffles",
-      category: "jali",
-      categoryLabel: "Decorative Panels",
-      material: "MDF Core + Acoustic Felt + Champagne Bronze Trim",
-      technique: "Rotary CNC Tooling & Laser Calibration",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
-      description: "Custom ceiling canopy offering both high sound absorption and a striking visual ceiling canopy."
+      title: "Bespoke White Marble Temple Sanctuary",
+      category: "stone",
+      categoryLabel: "3D Stone & Mandir",
+      material: "Pure Makrana White Marble & Brass Inlays",
+      technique: "Multi-Depth 3D Relief & Intricate Jali Lattices",
+      image: "assets/images/cnc_marble_mandir.jpg",
+      description: "Sanctuary sculpted from monolithic marble blocks with delicate floral carvings and glowing backlight lattice."
     }
   ],
 
@@ -180,7 +180,7 @@ const ARCTECH_DATA = {
       location: "Altamount Road, South Mumbai",
       scope: "Turnkey Interiors + Custom 3D CNC Travertine Wall",
       materials: "Travertine Stone, Smoked Oak, Champagne Bronze Trim",
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
+      image: "assets/images/interior_pillar.jpg",
       description: "A 4,200 sq.ft luxury penthouse featuring an 18-foot monolithic CNC carved travertine wall, integrated cove lighting, and custom precision millwork."
     },
     {
@@ -189,21 +189,21 @@ const ARCTECH_DATA = {
       category: "commercial",
       categoryLabel: "Commercial Interior",
       location: "Bandra Kurla Complex (BKC), Mumbai",
-      scope: "Executive Boardroom, CNC Acoustic Paneling, Reception Feature",
-      materials: "Acoustic Composite, Walnut Veneer, Brushed Brass",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-      description: "Complete executive floor execution with custom parametric ceiling baffles and CNC milled acoustic wall treatments."
+      scope: "Executive Boardroom, CNC Acoustic Paneling, Geometric Wood Wall",
+      materials: "Acoustic Hardwood, Walnut Veneer, Brushed Brass",
+      image: "assets/images/commercial_office.jpg",
+      description: "Complete executive floor execution with custom geometric faceted wall paneling, integrated brass lighting, and custom boardroom table."
     },
     {
       id: "proj-3",
-      title: "Sea-Facing Residence — Bandra West",
+      title: "Sea-Facing Master Suite — Bandra West",
       category: "residential",
       categoryLabel: "Residential Interior",
       location: "Carter Road, Bandra West, Mumbai",
-      scope: "Turnkey Execution, Fluted Wall Cladding, Custom Wardrobes",
-      materials: "Natural Teak, Statuario Marble, Leather Inlays",
-      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-      description: "Contemporary coastal luxury interior built with custom CNC fluted wooden transitions and seamless flush-mounted doors."
+      scope: "Turnkey Bedroom, Fluted Teak Wall Cladding, Concealed Lighting",
+      materials: "Natural Teak, Bronze Headboard, Engineered Oak",
+      image: "assets/images/cnc_fluted_paneling.jpg",
+      description: "Contemporary coastal luxury interior built with custom CNC fluted wooden transitions and warm vertical LED channels."
     },
     {
       id: "proj-4",
@@ -213,19 +213,19 @@ const ARCTECH_DATA = {
       location: "Juhu, Mumbai",
       scope: "3D CNC Stone Carving, Intricate Jali, Integrated Lighting",
       materials: "Pure Makrana White Marble & CNC Brass Inlays",
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
+      image: "assets/images/cnc_marble_mandir.jpg",
       description: "Bespoke spiritual sanctuary crafted from solid white marble blocks with multi-depth 3D floral reliefs and back-lit jali lattices."
     },
     {
       id: "proj-5",
-      title: "Boutique Executive Office — Lower Parel",
+      title: "Lounge & Reception Feature — Lower Parel",
       category: "commercial",
       categoryLabel: "Commercial Interior",
       location: "One Lodha Place, Lower Parel, Mumbai",
-      scope: "Turnkey Fitout + CNC Fluted Partitions & Desk",
-      materials: "Italian Botticino, Matt Black Metal, Tinted Glass",
-      image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80",
-      description: "Sleek private investment firm office delivered turnkey with custom CNC-carved reception desk and fluted acoustic dividers."
+      scope: "Turnkey Fitout + CNC Backlit Corian Feature Wall",
+      materials: "Translucent Corian, Dark Smoked Oak, Polished Terrazzo",
+      image: "assets/images/cnc_backlit_corian.jpg",
+      description: "Sleek private firm lounge delivered turnkey with custom CNC-carved illuminated Corian wall sculpture."
     },
     {
       id: "proj-6",
@@ -233,10 +233,10 @@ const ARCTECH_DATA = {
       category: "residential",
       categoryLabel: "Residential Turnkey",
       location: "Lokhandwala, Andheri West, Mumbai",
-      scope: "Turnkey Renovation, CNC Wall Artwork, Complete Millwork",
-      materials: "Imported Onyx, Engineered Oak, Textured Wall Systems",
-      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80",
-      description: "Total interior overhaul uniting living, dining, and private suites with custom geometric CNC wall panels and bespoke joinery."
+      scope: "Turnkey Renovation, CNC Geometric Screen, Full Millwork",
+      materials: "Champagne Brass, Statuario Marble, Matt Polyurethane",
+      image: "assets/images/cnc_jali_partition.jpg",
+      description: "Total interior overhaul uniting living, dining, and private suites with custom geometric CNC divider screen and bespoke joinery."
     }
   ],
 
