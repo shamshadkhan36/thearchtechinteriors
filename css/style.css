@@ -899,73 +899,7 @@ h1, h2, h3, h4, .font-display {
   margin-bottom: 1.25rem;
 }
 
-/* ==========================================================================
-   Project Estimator Tool
-   ========================================================================== */
-.estimator-box {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-gold);
-  border-radius: 8px;
-  padding: 2.5rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
-}
 
-@media (max-width: 768px) {
-  .estimator-box {
-    padding: 1.5rem;
-  }
-}
-
-.calc-step-label {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--gold-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.5rem;
-}
-
-.select-pill-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1.75rem;
-}
-
-.select-pill {
-  padding: 0.9rem 1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-subtle);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-align: left;
-}
-
-.select-pill.selected, .select-pill:hover {
-  background: rgba(197, 160, 89, 0.12);
-  border-color: var(--gold-primary);
-}
-
-.select-pill strong {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--text-main);
-  margin-bottom: 0.2rem;
-}
-
-.select-pill span {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-}
-
-.calc-summary-panel {
-  background: var(--bg-darkest);
-  border: 1px solid var(--border-gold);
-  border-radius: 6px;
-  padding: 1.75rem;
-  margin-top: 1.5rem;
-}
 
 /* ==========================================================================
    Why ArcTech Timeline

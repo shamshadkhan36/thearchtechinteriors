@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initProcessViewer();
   initShowcaseGallery();
   initPortfolio();
-  initEstimatorTool();
   initInquiryForm();
   initModal();
   initSmoothScroll();
@@ -302,82 +301,7 @@ function initPortfolio() {
 }
 
 /* ==========================================================================
-   7. Interactive Project Scope Estimator
-   ========================================================================== */
-function initEstimatorTool() {
-  const servicePills = document.querySelectorAll('.service-choice');
-  const materialPills = document.querySelectorAll('.material-choice');
-  const areaInput = document.getElementById('calc-area-input');
-  const summaryBox = document.getElementById('calc-summary-result');
-  const waBtn = document.getElementById('calc-wa-btn');
-
-  let selectedService = "3D CNC Stone / Panel Carving";
-  let selectedMaterial = "Imported Italian Marble / Travertine";
-  let areaValue = "150 sq.ft (Approx)";
-
-  const updateSummary = () => {
-    if (!summaryBox) return;
-    const area = areaInput && areaInput.value ? `${areaInput.value} sq.ft` : "Custom / Standard Spec";
-
-    summaryBox.innerHTML = `
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold-light); text-transform: uppercase;">Selected Service</span>
-          <p style="font-weight: 600; color: var(--text-main); font-size: 0.95rem;">${selectedService}</p>
-        </div>
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold-light); text-transform: uppercase;">Primary Material</span>
-          <p style="font-weight: 600; color: var(--text-main); font-size: 0.95rem;">${selectedMaterial}</p>
-        </div>
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold-light); text-transform: uppercase;">Estimated Footprint</span>
-          <p style="font-weight: 600; color: var(--text-main); font-size: 0.95rem;">${area}</p>
-        </div>
-        <div>
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold-light); text-transform: uppercase;">Manufacturing Base</span>
-          <p style="font-weight: 600; color: var(--text-main); font-size: 0.95rem;">Minar Tower, Jogeshwari West</p>
-        </div>
-      </div>
-      <p style="font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 0.75rem;">
-        ⚡ Ready for technical review. Connect with our engineering and execution specialists to finalize toolpaths, mockups, and exact quotation.
-      </p>
-    `;
-
-    if (waBtn) {
-      const waText = encodeURIComponent(
-        `Hi ArcTech Interior LLP, I used your website project calculator:\n• Scope: ${selectedService}\n• Material: ${selectedMaterial}\n• Estimated Area: ${area}\nPlease provide an initial consultation and quote.`
-      );
-      waBtn.href = `https://wa.me/919820054321?text=${waText}`;
-    }
-  };
-
-  servicePills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      servicePills.forEach(p => p.classList.remove('selected'));
-      pill.classList.add('selected');
-      selectedService = pill.dataset.value;
-      updateSummary();
-    });
-  });
-
-  materialPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      materialPills.forEach(p => p.classList.remove('selected'));
-      pill.classList.add('selected');
-      selectedMaterial = pill.dataset.value;
-      updateSummary();
-    });
-  });
-
-  if (areaInput) {
-    areaInput.addEventListener('input', updateSummary);
-  }
-
-  updateSummary();
-}
-
-/* ==========================================================================
-   8. Project Inquiry Form Handling & WhatsApp Trigger
+   7. Project Inquiry Form Handling & WhatsApp Trigger
    ========================================================================== */
 function initInquiryForm() {
   const form = document.getElementById('project-inquiry-form');
