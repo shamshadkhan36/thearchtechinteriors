@@ -161,13 +161,13 @@ const ARCTECH_DATA = {
     },
     {
       id: "cnc-panel-2",
-      title: "Bespoke White Marble Temple Sanctuary",
+      title: "Monolithic 3D CNC Marble Architectural Wall",
       category: "stone",
-      categoryLabel: "3D Stone & Mandir",
-      material: "Pure Makrana White Marble & Brass Inlays",
-      technique: "Multi-Depth 3D Relief & Intricate Jali Lattices",
-      image: "assets/images/cnc_marble_mandir.jpg",
-      description: "Sanctuary sculpted from monolithic marble blocks with delicate floral carvings and glowing backlight lattice."
+      categoryLabel: "3D Stone & Marble",
+      material: "Imported Italian Marble & Integrated Bronze Trim",
+      technique: "Multi-Depth 3D Surface Profiling & Laser Alignment",
+      image: "assets/images/hero_bg.jpg",
+      description: "Monolithic precision-machined marble feature wall engineered and dry-fitted at our Minar Tower workshop for luxury residential interiors."
     }
   ],
 
@@ -207,14 +207,14 @@ const ARCTECH_DATA = {
     },
     {
       id: "proj-4",
-      title: "Signature CNC Marble Mandir & Screen",
+      title: "Signature 3D CNC Statuario Feature Wall",
       category: "cnc",
       categoryLabel: "CNC Manufacturing",
       location: "Juhu, Mumbai",
-      scope: "3D CNC Stone Carving, Intricate Jali, Integrated Lighting",
-      materials: "Pure Makrana White Marble & CNC Brass Inlays",
-      image: "assets/images/cnc_marble_mandir.jpg",
-      description: "Bespoke spiritual sanctuary crafted from solid white marble blocks with multi-depth 3D floral reliefs and back-lit jali lattices."
+      scope: "3D CNC Stone Carving, Multi-Depth Wave Milling, Integrated Lighting",
+      materials: "Imported Italian Statuario Marble & Concealed Fasteners",
+      image: "assets/images/cnc_marble_carving.jpg",
+      description: "Bespoke architectural statement wall crafted from imported Statuario marble with continuous fluid 3D wave toolpaths and concealed structural mounting."
     },
     {
       id: "proj-5",
