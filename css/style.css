@@ -1160,3 +1160,109 @@ h1, h2, h3, h4, .font-display {
   background: var(--gold-primary);
   color: #000;
 }
+
+/* ==========================================================================
+   Floating WhatsApp Widget
+   ========================================================================== */
+.floating-wa-container {
+  position: fixed;
+  bottom: 2.25rem;
+  right: 2.25rem;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .floating-wa-container {
+    bottom: 5.25rem;
+    right: 1.25rem;
+  }
+}
+
+.floating-wa-tooltip {
+  background: rgba(11, 12, 14, 0.95);
+  color: var(--text-warm);
+  border: 1px solid var(--border-gold);
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s var(--ease-luxury);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.floating-wa-tooltip .online-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #25d366;
+  animation: waPulse 1.8s infinite;
+}
+
+.floating-wa-container:hover .floating-wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .floating-wa-tooltip {
+    display: none;
+  }
+}
+
+.floating-wa-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.3s var(--ease-luxury);
+  animation: waFloatingPulse 2.5s infinite;
+}
+
+.floating-wa-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+.floating-wa-btn:hover {
+  background: #20bd5a;
+  transform: scale(1.08) translateY(-3px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes waFloatingPulse {
+  0% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  70% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45), 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45), 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes waPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
