@@ -13,13 +13,18 @@
   --bg-card: rgba(20, 22, 27, 0.85);
   --bg-card-hover: rgba(28, 31, 38, 0.95);
 
-  /* Metallic Champagne / Muted Bronze Accents */
+  /* Metallic Champagne / Muted Bronze & Brand Orange Accents */
   --gold-primary: #c5a059;
   --gold-light: #e2c27c;
   --gold-dark: #917235;
   --gold-glow: rgba(197, 160, 89, 0.22);
   --gold-gradient: linear-gradient(135deg, #f3d79b 0%, #c5a059 50%, #8f6f32 100%);
   --gold-gradient-hover: linear-gradient(135deg, #fae2ab 0%, #d4af65 50%, #9e7d3b 100%);
+  
+  --orange-primary: #ff5109;
+  --orange-light: #ff7333;
+  --orange-glow: rgba(255, 81, 9, 0.28);
+  --orange-glow-hover: rgba(255, 81, 9, 0.45);
   
   /* Text & Surfaces */
   --text-main: #f5f4f0;
@@ -1888,8 +1893,8 @@ h1, h2, h3, h4, h5, h6, .font-display {
 
 .welcome-card {
   background: var(--bg-tertiary);
-  border: 2px solid var(--border-subtle);
-  border-radius: 10px;
+  border: 2px solid var(--orange-primary);
+  border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   display: flex;
@@ -1897,12 +1902,13 @@ h1, h2, h3, h4, h5, h6, .font-display {
   height: 100%;
   transition: all 0.35s var(--ease-luxury);
   position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--orange-glow);
 }
 
 .welcome-card:hover {
-  border-color: var(--gold-primary);
+  border-color: var(--orange-light);
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 30px rgba(197, 160, 89, 0.22);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85), 0 0 35px var(--orange-glow-hover);
 }
 
 .welcome-card-media {
@@ -1974,8 +1980,8 @@ h1, h2, h3, h4, h5, h6, .font-display {
 .w-dot.active {
   width: 20px;
   border-radius: 3px;
-  background: var(--gold-primary);
-  box-shadow: 0 0 10px var(--gold-primary);
+  background: var(--orange-primary);
+  box-shadow: 0 0 10px var(--orange-primary);
 }
 
 .welcome-card-body {
@@ -1994,7 +2000,7 @@ h1, h2, h3, h4, h5, h6, .font-display {
 }
 
 .welcome-card:hover .welcome-card-title {
-  color: var(--gold-light);
+  color: var(--orange-light);
 }
 
 .welcome-card-tagline {
@@ -2023,7 +2029,7 @@ h1, h2, h3, h4, h5, h6, .font-display {
 }
 
 .welcome-card-features li span {
-  color: var(--gold-primary);
+  color: var(--orange-primary);
   font-weight: bold;
   font-size: 0.82rem;
   flex-shrink: 0;
