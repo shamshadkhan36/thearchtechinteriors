@@ -234,7 +234,7 @@ function initShowcaseGallery() {
             <button onclick="openShowcaseModal('${item.id}')" class="btn-secondary" style="padding: 0.6rem 1rem; font-size: 0.82rem; flex-grow: 1;">
               View Details
             </button>
-            <a href="https://wa.me/919820054321?text=Hi%20ArcTech,%20I%20am%20interested%20in%20custom%20CNC%20work%20similar%20to:%20${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="padding: 0.6rem 0.85rem; font-size: 0.82rem;" title="Inquire on WhatsApp">
+            <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20am%20interested%20in%20custom%20CNC%20work%20similar%20to:%20${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="padding: 0.6rem 0.85rem; font-size: 0.82rem;" title="Inquire on WhatsApp">
               💬
             </a>
           </div>
@@ -288,7 +288,7 @@ function initPortfolio() {
             <button onclick="openProjectModal('${item.id}')" class="btn-secondary" style="padding: 0.6rem 1rem; font-size: 0.82rem; flex-grow: 1;">
               Project Specs
             </button>
-            <a href="https://wa.me/919820054321?text=Hi%20ArcTech,%20I%20am%20inquiring%20about%20interior%20or%20CNC%20work%20like:%20${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="padding: 0.6rem 0.85rem; font-size: 0.82rem;">
+            <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20am%20inquiring%20about%20interior%20or%20CNC%20work%20like:%20${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="padding: 0.6rem 0.85rem; font-size: 0.82rem;">
               💬 Inquire
             </a>
           </div>
@@ -336,7 +336,7 @@ function initInquiryForm() {
       const text = encodeURIComponent(
         `Hi ArcTech Interior LLP,\nI would like to inquire about a project:\n• Name: ${data.name || 'Client'}\n• Phone: ${data.phone || 'Not provided'}\n• Project Type: ${data.type}\n• Location: ${data.location}\n• Details: ${data.message || 'Please consult on drawings and scope.'}`
       );
-      window.open(`https://wa.me/919820054321?text=${text}`, '_blank');
+      window.open(`https://wa.me/918652223456?text=${text}`, '_blank');
     });
   }
 
@@ -359,7 +359,7 @@ function initInquiryForm() {
       feedbackMsg.innerHTML = `
         <div style="padding: 1rem; background: rgba(197, 160, 89, 0.1); border: 1px solid var(--gold-primary); border-radius: 4px; margin-top: 1rem;">
           <strong>Thank you, ${data.name}!</strong><br/>
-          Your project inquiry for <em>${data.type} (${data.location})</em> has been logged. Our technical team from Minar Tower, Jogeshwari West will contact you within 24 hours.
+          Your project inquiry for <em>${data.type} (${data.location})</em> has been logged. Our technical team from Jogeshwari West, Mumbai will contact you within 24 hours.
         </div>
       `;
     }
@@ -416,7 +416,7 @@ function initModal() {
         ${item.description}
       </p>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="https://wa.me/919820054321?text=Hi%20ArcTech,%20I%20want%20to%20order%20or%20inquire%20about:%20${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="flex-grow: 1;">
+        <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20want%20to%20order%20or%20inquire%20about:%20${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="flex-grow: 1;">
           💬 Inquire on WhatsApp
         </a>
         <a href="#inquiry" onclick="document.getElementById('global-modal').classList.remove('open')" class="btn-primary" style="flex-grow: 1;">
@@ -455,7 +455,7 @@ function initModal() {
         ${item.description}
       </p>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="https://wa.me/919820054321?text=Hi%20ArcTech,%20I%20am%20interested%20in%20the%20${encodeURIComponent(item.title)}%20project%20execution." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="flex-grow: 1;">
+        <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20am%20interested%20in%20the%20${encodeURIComponent(item.title)}%20project%20execution." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="flex-grow: 1;">
           💬 Inquire on WhatsApp
         </a>
         <a href="#inquiry" onclick="document.getElementById('global-modal').classList.remove('open')" class="btn-primary" style="flex-grow: 1;">

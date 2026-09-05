@@ -1,7 +1,7 @@
 /**
  * ArcTech Interior LLP - Application Data
  * Focus: Precision CNC Manufacturing + Premium Interiors
- * Location: Minar Tower, Jogeshwari West, Mumbai
+ * Location: Jogeshwari West, Mumbai
  */
 
 const ARCTECH_DATA = {
@@ -9,11 +9,11 @@ const ARCTECH_DATA = {
     name: "ArcTech Interior LLP",
     shortName: "ArcTech",
     tagline: "Precision CNC Manufacturing + Premium Interiors",
-    location: "Minar Tower, Jogeshwari West, Mumbai, Maharashtra 400102",
-    phone: "+91 98200 54321",
-    phoneClean: "919820054321",
+    location: "Jogeshwari West, Mumbai, Maharashtra 400102",
+    phone: "+91 86522 23456",
+    phoneClean: "918652223456",
     email: "contact@arctechinteriors.com",
-    whatsapp: "919820054321",
+    whatsapp: "918652223456",
     hours: "Mon - Sat: 9:30 AM - 7:30 PM",
     established: 2012,
     llpYear: 2019,
@@ -24,7 +24,7 @@ const ARCTECH_DATA = {
     { label: "Construction Roots", value: "Since 1970", desc: "5+ decades of building foundation" },
     { label: "ArcTech Founded", value: "Est. 2012", desc: "Pioneering precision interior solutions" },
     { label: "LLP Transition", value: "2019", desc: "Corporate scale & modern facility" },
-    { label: "Manufacturing Base", value: "Jogeshwari W", desc: "Minar Tower in-house CNC hub" }
+    { label: "Manufacturing Base", value: "Jogeshwari W", desc: "In-house precision CNC hub" }
   ],
 
   services: {
@@ -257,7 +257,7 @@ const ARCTECH_DATA = {
       year: "2019",
       title: "ArcTech Interior LLP",
       badge: "Corporate Scale",
-      description: "Formally transitioned to an LLP, investing heavily in state-of-the-art multi-axis CNC machinery and precision digital toolpathing at Minar Tower, Jogeshwari West."
+      description: "Formally transitioned to an LLP, investing heavily in state-of-the-art multi-axis CNC machinery and precision digital toolpathing in Jogeshwari West, Mumbai."
     },
     {
       year: "TODAY",
