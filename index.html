@@ -24,6 +24,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css" />
 
@@ -77,11 +81,7 @@
   <header id="navbar">
     <div class="container-custom nav-container">
       <a href="#hero" class="brand-logo" aria-label="ArcTech Interior LLP">
-        <span class="logo-main">
-          ARC TECH
-          <span style="display:inline-block; width:6px; height:6px; background:var(--gold-primary); border-radius:50%; margin-left:2px; box-shadow:0 0 8px var(--gold-primary);"></span>
-        </span>
-        <span class="logo-sub">INTERIOR LLP</span>
+        <img src="assets/images/logo.png" alt="ArcTech Interior LLP" class="brand-logo-img" />
       </a>
 
       <nav>
@@ -111,10 +111,9 @@
   <aside id="mobile-drawer" class="mobile-drawer">
     <div>
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem;">
-        <div class="brand-logo">
-          <span class="logo-main">ARC TECH</span>
-          <span class="logo-sub">INTERIOR LLP</span>
-        </div>
+        <a href="#hero" class="brand-logo" aria-label="ArcTech Interior LLP">
+          <img src="assets/images/logo.png" alt="ArcTech Interior LLP" class="brand-logo-img" />
+        </a>
         <button id="mobile-menu-close" style="background:transparent; border:none; color:var(--text-main); cursor:pointer;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
@@ -847,8 +846,7 @@
         <div style="background: var(--bg-secondary); border: 1px solid var(--border-gold); border-radius: 6px; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div class="brand-logo" style="margin-bottom: 1.5rem;">
-              <span class="logo-main" style="font-size: 1.8rem;">ARC TECH</span>
-              <span class="logo-sub" style="font-size: 0.8rem;">INTERIOR LLP</span>
+              <img src="assets/images/logo.png" alt="ArcTech Interior LLP" class="brand-logo-img" style="height: 50px; max-width: 240px;" />
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
@@ -930,8 +928,7 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2.5rem; margin-bottom: 3.5rem;">
         <div>
           <div class="brand-logo" style="margin-bottom: 1rem;">
-            <span class="logo-main">ARC TECH</span>
-            <span class="logo-sub">INTERIOR LLP</span>
+            <img src="assets/images/logo.png" alt="ArcTech Interior LLP" class="brand-logo-img" style="height: 44px; max-width: 200px;" />
           </div>
           <p style="color: var(--gold-light); font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 1rem;">
             Precision CNC Manufacturing + Premium Interiors
@@ -945,11 +942,11 @@
           <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--gold-light); text-transform: uppercase; margin-bottom: 1rem;">Navigation</div>
           <ul style="list-style:none; display:flex; flex-direction:column; gap:0.6rem; font-size:0.9rem;">
             <li><a href="#hero" style="color:var(--text-muted); text-decoration:none;">Home</a></li>
-            <li><a href="#services" style="color:var(--text-muted); text-decoration:none;">CNC Manufacturing</a></li>
-            <li><a href="#services" style="color:var(--text-muted); text-decoration:none;">Premium Interiors</a></li>
-            <li><a href="#cnc-process" style="color:var(--text-muted); text-decoration:none;">CNC Process</a></li>
-            <li><a href="#portfolio" style="color:var(--text-muted); text-decoration:none;">Selected Work</a></li>
-            <li><a href="#why-arctech" style="color:var(--text-muted); text-decoration:none;">Why ArcTech</a></li>
+            <li><a href="#division-hub" onclick="switchDivision('cnc')" style="color:var(--text-muted); text-decoration:none;">⚙️ CNC Manufacturing</a></li>
+            <li><a href="#division-hub" onclick="switchDivision('interiors')" style="color:var(--text-muted); text-decoration:none;">🏛️ Architecture & Interiors</a></li>
+            <li><a href="#cnc-process" style="color:var(--text-muted); text-decoration:none;">CNC Process Workflow</a></li>
+            <li><a href="#why-arctech" style="color:var(--text-muted); text-decoration:none;">Why ArcTech Heritage</a></li>
+            <li><a href="#contact" style="color:var(--text-muted); text-decoration:none;">Contact & Location</a></li>
           </ul>
         </div>
 
