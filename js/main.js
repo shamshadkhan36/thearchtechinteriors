@@ -8,8 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initBeforeAfterSlider();
   initProcessViewer();
-  initShowcaseGallery();
-  initPortfolio();
+  initDivisionHub();
   initInquiryForm();
   initModal();
   initSmoothScroll();
@@ -204,37 +203,100 @@ function initProcessViewer() {
 }
 
 /* ==========================================================================
-   5. CNC Visual Showcase Gallery
+   5. Dual Division Hub (CNC Manufacturing vs Architecture & Interiors)
    ========================================================================== */
-function initShowcaseGallery() {
-  const container = document.getElementById('cnc-gallery-grid');
-  const filterTabs = document.getElementById('cnc-filter-tabs');
-  if (!container || !window.ARCTECH_DATA) return;
+function initDivisionHub() {
+  const bannerContainer = document.getElementById('division-banner');
+  const filterTabsContainer = document.getElementById('division-filter-tabs');
+  const galleryGrid = document.getElementById('division-gallery-grid');
 
-  const items = window.ARCTECH_DATA.showcaseGallery;
+  if (!galleryGrid || !window.ARCTECH_DATA || !window.ARCTECH_DATA.divisions) return;
 
-  const render = (category = 'all') => {
-    const filtered = category === 'all' 
+  let currentDivision = 'cnc';
+  let currentFilter = 'all';
+
+  const renderDivision = () => {
+    const division = window.ARCTECH_DATA.divisions[currentDivision];
+    if (!division) return;
+
+    // Update folder tab active classes
+    const cncTab = document.getElementById('folder-tab-cnc');
+    const intTab = document.getElementById('folder-tab-interiors');
+    if (cncTab && intTab) {
+      if (currentDivision === 'cnc') {
+        cncTab.classList.add('active');
+        intTab.classList.remove('active');
+      } else {
+        intTab.classList.add('active');
+        cncTab.classList.remove('active');
+      }
+    }
+
+    // Update hero pills if present
+    document.querySelectorAll('.hero-div-btn').forEach(btn => {
+      if (btn.dataset.division === currentDivision) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // Render Division Banner
+    if (bannerContainer) {
+      bannerContainer.innerHTML = `
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+            <span class="badge-tech">${division.badge}</span>
+            <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--gold-light);">${division.subtitle}</span>
+          </div>
+          <h3 style="font-size: 1.75rem; margin-bottom: 0.4rem; color: var(--text-main);">${division.icon} ${division.title}</h3>
+          <p style="color: var(--text-warm); font-size: 0.95rem; line-height: 1.6; max-width: 850px;">
+            ${division.description}
+          </p>
+        </div>
+        <div style="flex-shrink: 0;">
+          <a href="#inquiry" class="btn-primary" style="padding: 0.75rem 1.35rem; font-size: 0.85rem; white-space: nowrap;">
+            Inquire in This Division →
+          </a>
+        </div>
+      `;
+    }
+
+    // Render Subcategory Filters
+    if (filterTabsContainer) {
+      filterTabsContainer.innerHTML = division.subcategories.map(sub => `
+        <button class="filter-btn ${sub.id === currentFilter ? 'active' : ''}" data-filter="${sub.id}">
+          ${sub.label}
+        </button>
+      `).join('');
+    }
+
+    // Filter Items
+    const items = division.items;
+    const filtered = currentFilter === 'all' 
       ? items 
-      : items.filter(item => item.category === category);
+      : items.filter(item => item.category === currentFilter);
 
-    container.innerHTML = filtered.map(item => `
-      <div class="gallery-card" data-id="${item.id}">
-        <div class="gallery-img-wrap" onclick="openShowcaseModal('${item.id}')">
+    // Render Gallery Cards
+    galleryGrid.innerHTML = filtered.map(item => `
+      <div class="gallery-card" data-division="${currentDivision}" data-id="${item.id}">
+        <div class="gallery-img-wrap" onclick="openDivisionModal('${currentDivision}', '${item.id}')">
           <img src="${item.image}" alt="${item.title}" loading="lazy" />
           <div class="gallery-overlay-tag">${item.categoryLabel}</div>
         </div>
         <div class="gallery-info">
           <div>
+            ${item.location ? `<div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-light); margin-bottom: 0.25rem;">📍 ${item.location}</div>` : ''}
             <h3>${item.title}</h3>
-            <div class="spec-line">${item.material}</div>
+            ${item.material ? `<div class="spec-line">${item.material}</div>` : ''}
+            ${item.scope ? `<div class="spec-line" style="color: var(--text-warm); font-size: 0.82rem; margin-bottom: 0.5rem;"><strong>Scope:</strong> ${item.scope}</div>` : ''}
             <p>${item.description}</p>
           </div>
-          <div style="display: flex; gap: 0.75rem; align-items: center;">
-            <button onclick="openShowcaseModal('${item.id}')" class="btn-secondary" style="padding: 0.6rem 1rem; font-size: 0.82rem; flex-grow: 1;">
-              View Details
+          <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 1rem;">
+            <button onclick="openDivisionModal('${currentDivision}', '${item.id}')" class="btn-secondary" style="padding: 0.6rem 1rem; font-size: 0.82rem; flex-grow: 1;">
+              View Details & Specs
             </button>
-            <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20am%20interested%20in%20custom%20CNC%20work%20similar%20to:%20${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="padding: 0.6rem 0.85rem; font-size: 0.82rem;" title="Inquire on WhatsApp">
+            <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20am%20interested%20in%20${encodeURIComponent(item.title)}%20(${division.title})" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="padding: 0.6rem 0.85rem; font-size: 0.82rem;" title="Inquire on WhatsApp">
               💬
             </a>
           </div>
@@ -243,75 +305,39 @@ function initShowcaseGallery() {
     `).join('');
   };
 
-  if (filterTabs) {
-    filterTabs.addEventListener('click', (e) => {
-      const btn = e.target.closest('.filter-btn');
-      if (!btn) return;
-      filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      render(btn.dataset.filter);
-    });
-  }
+  // Global switchDivision helper for buttons and navigation links
+  window.switchDivision = (divisionId, scroll = true) => {
+    if (!window.ARCTECH_DATA.divisions[divisionId]) return;
+    currentDivision = divisionId;
+    currentFilter = 'all';
+    renderDivision();
 
-  render('all');
-}
-
-/* ==========================================================================
-   6. Selected Work / Portfolio
-   ========================================================================== */
-function initPortfolio() {
-  const container = document.getElementById('portfolio-grid');
-  const filterTabs = document.getElementById('portfolio-filter-tabs');
-  if (!container || !window.ARCTECH_DATA) return;
-
-  const projects = window.ARCTECH_DATA.projects;
-
-  const render = (category = 'all') => {
-    const filtered = category === 'all' 
-      ? projects 
-      : projects.filter(p => p.category === category);
-
-    container.innerHTML = filtered.map(item => `
-      <div class="gallery-card">
-        <div class="gallery-img-wrap" onclick="openProjectModal('${item.id}')">
-          <img src="${item.image}" alt="${item.title}" loading="lazy" />
-          <div class="gallery-overlay-tag">${item.categoryLabel}</div>
-        </div>
-        <div class="gallery-info">
-          <div>
-            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-light); margin-bottom: 0.25rem;">📍 ${item.location}</div>
-            <h3>${item.title}</h3>
-            <div class="spec-line" style="color: var(--text-warm); font-size: 0.82rem; margin-bottom: 0.5rem;"><strong>Scope:</strong> ${item.scope}</div>
-            <p>${item.description}</p>
-          </div>
-          <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 1rem;">
-            <button onclick="openProjectModal('${item.id}')" class="btn-secondary" style="padding: 0.6rem 1rem; font-size: 0.82rem; flex-grow: 1;">
-              Project Specs
-            </button>
-            <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20am%20inquiring%20about%20interior%20or%20CNC%20work%20like:%20${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="padding: 0.6rem 0.85rem; font-size: 0.82rem;">
-              💬 Inquire
-            </a>
-          </div>
-        </div>
-      </div>
-    `).join('');
+    if (scroll) {
+      const hub = document.getElementById('division-hub');
+      if (hub) {
+        const navHeight = document.getElementById('navbar')?.offsetHeight || 80;
+        const targetPos = hub.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+      }
+    }
   };
 
-  if (filterTabs) {
-    filterTabs.addEventListener('click', (e) => {
+  // Sub-filter Click Listener
+  if (filterTabsContainer) {
+    filterTabsContainer.addEventListener('click', (e) => {
       const btn = e.target.closest('.filter-btn');
       if (!btn) return;
-      filterTabs.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      render(btn.dataset.filter);
+      currentFilter = btn.dataset.filter;
+      renderDivision();
     });
   }
 
-  render('all');
+  // Initial Render
+  renderDivision();
 }
 
 /* ==========================================================================
-   7. Project Inquiry Form Handling & WhatsApp Trigger
+   6. Project Inquiry Form Handling & WhatsApp Trigger
    ========================================================================== */
 function initInquiryForm() {
   const form = document.getElementById('project-inquiry-form');
@@ -369,7 +395,7 @@ function initInquiryForm() {
 }
 
 /* ==========================================================================
-   9. Lightbox / Modal for Project & Showcase Zoom
+   7. Lightbox / Modal for Item Zoom & Technical Specs
    ========================================================================== */
 function initModal() {
   const backdrop = document.getElementById('global-modal');
@@ -393,9 +419,11 @@ function initModal() {
     }
   });
 
-  // Modal open helper on window
-  window.openShowcaseModal = (id) => {
-    const item = window.ARCTECH_DATA?.showcaseGallery.find(x => x.id === id);
+  // Modal open helper for specific division items
+  window.openDivisionModal = (divisionId, itemId) => {
+    const division = window.ARCTECH_DATA?.divisions[divisionId];
+    if (!division) return;
+    const item = division.items.find(x => x.id === itemId);
     if (!item) return;
 
     const modalBody = document.getElementById('modal-dynamic-content');
@@ -403,24 +431,33 @@ function initModal() {
 
     modalBody.innerHTML = `
       <div style="margin-bottom: 1.5rem;">
-        <div class="badge-tech" style="margin-bottom: 0.5rem;">${item.categoryLabel}</div>
-        <h2 style="font-size: 1.85rem; margin-bottom: 0.35rem;">${item.title}</h2>
-        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--gold-light);">
-          Material: ${item.material} • Technique: ${item.technique}
+        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
+          <span class="badge-tech">${division.badge}</span>
+          <span class="badge-tech" style="background: rgba(255,255,255,0.06); border-color: var(--border-subtle);">${item.categoryLabel}</span>
         </div>
+        <h2 style="font-size: 1.85rem; margin-bottom: 0.35rem;">${item.title}</h2>
+        ${item.location ? `<div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--gold-light); margin-bottom: 0.25rem;">📍 ${item.location}</div>` : ''}
+        ${item.material ? `<div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--gold-light);">Material: ${item.material} ${item.technique ? `• Technique: ${item.technique}` : ''}</div>` : ''}
+        ${item.scope ? `<div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--gold-light);">Scope: ${item.scope}</div>` : ''}
       </div>
       <div style="position: relative; height: 380px; border-radius: 6px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--border-gold);">
         <img src="${item.image}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
+      ${item.materials ? `
+        <div style="background: rgba(197, 160, 89, 0.06); border-left: 3px solid var(--gold-primary); padding: 0.85rem 1.25rem; border-radius: 2px; margin-bottom: 1.25rem;">
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; display: block;">Specifications & Deliverables</span>
+          <span style="color: var(--text-main); font-size: 0.92rem;">${item.materials}</span>
+        </div>
+      ` : ''}
       <p style="color: var(--text-warm); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
         ${item.description}
       </p>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20want%20to%20order%20or%20inquire%20about:%20${encodeURIComponent(item.title)}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="flex-grow: 1;">
+        <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20want%20to%20inquire%20about:%20${encodeURIComponent(item.title)}%20(${division.title})" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="flex-grow: 1;">
           💬 Inquire on WhatsApp
         </a>
         <a href="#inquiry" onclick="document.getElementById('global-modal').classList.remove('open')" class="btn-primary" style="flex-grow: 1;">
-          Get Formal Quote
+          Get Formal Consultation / Quote
         </a>
       </div>
     `;
@@ -429,48 +466,13 @@ function initModal() {
     document.body.style.overflow = 'hidden';
   };
 
-  window.openProjectModal = (id) => {
-    const item = window.ARCTECH_DATA?.projects.find(x => x.id === id);
-    if (!item) return;
-
-    const modalBody = document.getElementById('modal-dynamic-content');
-    if (!modalBody) return;
-
-    modalBody.innerHTML = `
-      <div style="margin-bottom: 1.5rem;">
-        <div class="badge-tech" style="margin-bottom: 0.5rem;">${item.categoryLabel}</div>
-        <h2 style="font-size: 1.85rem; margin-bottom: 0.35rem;">${item.title}</h2>
-        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--gold-light);">
-          📍 ${item.location} • Scope: ${item.scope}
-        </div>
-      </div>
-      <div style="position: relative; height: 380px; border-radius: 6px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--border-gold);">
-        <img src="${item.image}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover;" />
-      </div>
-      <div style="background: rgba(197, 160, 89, 0.06); border-left: 3px solid var(--gold-primary); padding: 0.85rem 1.25rem; border-radius: 2px; margin-bottom: 1.25rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-light); text-transform: uppercase; display: block;">Materials & Finishes</span>
-        <span style="color: var(--text-main); font-size: 0.92rem;">${item.materials}</span>
-      </div>
-      <p style="color: var(--text-warm); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-        ${item.description}
-      </p>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="https://wa.me/918652223456?text=Hi%20ArcTech,%20I%20am%20interested%20in%20the%20${encodeURIComponent(item.title)}%20project%20execution." target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="flex-grow: 1;">
-          💬 Inquire on WhatsApp
-        </a>
-        <a href="#inquiry" onclick="document.getElementById('global-modal').classList.remove('open')" class="btn-primary" style="flex-grow: 1;">
-          Start Similar Project
-        </a>
-      </div>
-    `;
-
-    backdrop.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  };
+  // Backward compatible helpers
+  window.openShowcaseModal = (id) => window.openDivisionModal('cnc', id);
+  window.openProjectModal = (id) => window.openDivisionModal('interiors', id);
 }
 
 /* ==========================================================================
-   10. Smooth Scroll on Anchor Links
+   8. Smooth Scroll on Anchor Links
    ========================================================================== */
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

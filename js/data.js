@@ -108,6 +108,171 @@ const ARCTECH_DATA = {
     }
   ],
 
+  divisions: {
+    cnc: {
+      id: "cnc",
+      title: "CNC Manufacturing Division",
+      subtitle: "In-House 3D Stone Carving • Jali Panels • Fluted Wood • Corian Reliefs",
+      badge: "Folder 01 • CNC Manufacturing Hub",
+      icon: "⚙️",
+      description: "Dedicated computer-controlled manufacturing for precision custom interior elements, 3D monolithic stone carving, decorative jali screens, fluted wood transitions, and Corian wall sculptures fabricated directly at our Jogeshwari West facility.",
+      subcategories: [
+        { id: "all", label: "All CNC Works" },
+        { id: "stone", label: "3D Stone & Marble" },
+        { id: "jali", label: "Decorative Jali Screens" },
+        { id: "wood", label: "Wood & Fluted Paneling" },
+        { id: "corian", label: "Backlit Corian Reliefs" },
+        { id: "milling", label: "CNC Machine & Tooling" }
+      ],
+      items: [
+        {
+          id: "cnc-stone-1",
+          title: "3D Relief Carved Statuario Marble",
+          category: "stone",
+          categoryLabel: "3D Stone Carving",
+          material: "Imported Statuario Italian Marble",
+          technique: "Multi-pass 3D Ball-Nose CNC Milling",
+          image: "assets/images/cnc_marble_carving.jpg",
+          description: "Organic parametric wave relief carved directly into monolithic Italian marble for a luxury living room focal backdrop."
+        },
+        {
+          id: "cnc-screen-1",
+          title: "Geometric Brass-Tipped Jali Screen",
+          category: "jali",
+          categoryLabel: "Decorative Panels",
+          material: "High-Density Moisture-Resistant HDF + Champagne Brass",
+          technique: "Precision 2D Profile Cutting + 45° Chamfer",
+          image: "assets/images/cnc_jali_partition.jpg",
+          description: "Custom geometric partition screen dividing dining and lounge areas with integrated brass accents and backlit shadows."
+        },
+        {
+          id: "cnc-wood-1",
+          title: "Fluted Teak Architectural Baffles",
+          category: "wood",
+          categoryLabel: "Wood & Fluted Paneling",
+          material: "Grade-A Natural Burmese Teak",
+          technique: "Custom Radiused Tool Milling + Hand Oil Rub",
+          image: "assets/images/cnc_fluted_paneling.jpg",
+          description: "Precision CNC milled fluted wood paneling with concealed wire raceways and warm integrated linear cove lighting."
+        },
+        {
+          id: "cnc-corian-1",
+          title: "Backlit Thermoformed Corian Wall",
+          category: "corian",
+          categoryLabel: "3D Solid Surface",
+          material: "Translucent Solid Surface / Corian",
+          technique: "Variable Depth CNC Relief with LED Backlight",
+          image: "assets/images/cnc_backlit_corian.jpg",
+          description: "Subtle topographic carving that reveals glowing atmospheric gradient depth when backlit in luxury commercial and lounge spaces."
+        },
+        {
+          id: "cnc-arch-1",
+          title: "Heavy-Duty CNC Stone Milling Setup",
+          category: "milling",
+          categoryLabel: "In-House Manufacturing",
+          material: "Italian Statuario Marble & Diamond Tooling",
+          technique: "Multi-Axis CNC Milling with Flood Coolant Bed",
+          image: "assets/images/cnc_pillar.jpg",
+          description: "In-house precision CNC stone bridge machining with liquid coolant bed at our Jogeshwari facility, carving fluid 3D relief contours on clamped marble slabs."
+        }
+      ]
+    },
+    interiors: {
+      id: "interiors",
+      title: "Architecture & Interiors Division",
+      subtitle: "CAD Drawings • Floor Plans • 2D/3D Elevations • Turnkey Residences & Commercial Spaces",
+      badge: "Folder 02 • Architecture & Interior Hub",
+      icon: "🏛️",
+      description: "Complete architectural and interior execution division: from technical CAD layouts, working floor plans, and 3D interior elevations to full turnkey fitouts of luxury Mumbai penthouses, villas, and BKC corporate offices.",
+      subcategories: [
+        { id: "all", label: "All Architecture & Interiors" },
+        { id: "drawing", label: "Architectural Drawings & Plans" },
+        { id: "elevation", label: "2D/3D Elevations & Sections" },
+        { id: "residential", label: "Residential Luxury Homes" },
+        { id: "commercial", label: "Commercial & Corporate" }
+      ],
+      items: [
+        {
+          id: "arch-plan-1",
+          title: "Architectural CAD Drafting & 2D/3D Floor Plans",
+          category: "drawing",
+          categoryLabel: "Architectural Drawings & Plans",
+          location: "Design Studio — Jogeshwari West, Mumbai",
+          scope: "Spatial Layouts, Working Drawings & BOQ Planning",
+          materials: "CAD Drafting, 3D Spatial Wireframes, Structural Dimensions",
+          image: "assets/images/arch_drawing_plan.jpg",
+          description: "Comprehensive architectural layouts, structural dimensioning, spatial floor plans, and technical joinery schematics prepared for luxury residential and commercial spaces."
+        },
+        {
+          id: "arch-elev-1",
+          title: "Interior Elevation Drawings & 3D Sectional Visualization",
+          category: "elevation",
+          categoryLabel: "2D/3D Elevations & Sections",
+          location: "Design Studio — Mumbai",
+          scope: "2D Technical Elevations, Millwork Sections & 3D Renders",
+          materials: "Technical DWG Elevation Drawings & Photorealistic 3D Renders",
+          image: "assets/images/arch_elevation_3d.jpg",
+          description: "Millimeter-precision 2D wall elevations, ceiling cove sections, and photorealistic 3D interior visualizations ensuring seamless design-to-site execution."
+        },
+        {
+          id: "proj-1",
+          title: "Penthouse Suite — Altamount Road",
+          category: "residential",
+          categoryLabel: "Residential Luxury Interior",
+          location: "Altamount Road, South Mumbai",
+          scope: "Turnkey Interiors + Custom 3D CNC Travertine Wall",
+          materials: "Travertine Stone, Smoked Oak, Champagne Bronze Trim",
+          image: "assets/images/hero_bg.jpg",
+          description: "A 4,200 sq.ft luxury penthouse featuring an 18-foot monolithic CNC carved Statuario wall, integrated cove lighting, and custom precision millwork."
+        },
+        {
+          id: "proj-2",
+          title: "Corporate Headquarters — BKC",
+          category: "commercial",
+          categoryLabel: "Commercial Interior",
+          location: "Bandra Kurla Complex (BKC), Mumbai",
+          scope: "Executive Boardroom, CNC Acoustic Paneling, Geometric Wood Wall",
+          materials: "Acoustic Hardwood, Walnut Veneer, Brushed Brass",
+          image: "assets/images/commercial_office.jpg",
+          description: "Complete executive floor execution with custom geometric faceted wall paneling, integrated brass lighting, and custom boardroom table."
+        },
+        {
+          id: "proj-3",
+          title: "Sea-Facing Master Suite — Bandra West",
+          category: "residential",
+          categoryLabel: "Residential Interior",
+          location: "Carter Road, Bandra West, Mumbai",
+          scope: "Turnkey Bedroom, Fluted Teak Wall Cladding, Concealed Lighting",
+          materials: "Natural Teak, Bronze Headboard, Engineered Oak",
+          image: "assets/images/cnc_fluted_paneling.jpg",
+          description: "Contemporary coastal luxury interior built with custom CNC fluted wooden transitions and warm vertical LED channels."
+        },
+        {
+          id: "proj-6",
+          title: "Luxury Duplex — Andheri West",
+          category: "residential",
+          categoryLabel: "Residential Turnkey",
+          location: "Lokhandwala, Andheri West, Mumbai",
+          scope: "Turnkey Renovation, CNC Geometric Screen, Full Millwork",
+          materials: "Champagne Brass, Statuario Marble, Matt Polyurethane",
+          image: "assets/images/cnc_jali_partition.jpg",
+          description: "Total interior overhaul uniting living, dining, and private suites with custom geometric CNC divider screen and bespoke joinery."
+        },
+        {
+          id: "proj-5",
+          title: "Lounge & Reception Feature — Lower Parel",
+          category: "commercial",
+          categoryLabel: "Commercial Interior",
+          location: "One Lodha Place, Lower Parel, Mumbai",
+          scope: "Turnkey Fitout + CNC Backlit Corian Feature Wall",
+          materials: "Translucent Corian, Dark Smoked Oak, Polished Terrazzo",
+          image: "assets/images/cnc_backlit_corian.jpg",
+          description: "Sleek private firm lounge delivered turnkey with custom CNC-carved illuminated Corian wall sculpture."
+        }
+      ]
+    }
+  },
+
   showcaseGallery: [
     {
       id: "cnc-stone-1",
@@ -142,8 +307,8 @@ const ARCTECH_DATA = {
     {
       id: "cnc-corian-1",
       title: "Backlit Thermoformed Corian Wall",
-      category: "stone",
-      categoryLabel: "3D Stone & Solid Surface",
+      category: "corian",
+      categoryLabel: "3D Solid Surface",
       material: "Translucent Solid Surface / Corian",
       technique: "Variable Depth CNC Relief with LED Backlight",
       image: "assets/images/cnc_backlit_corian.jpg",
@@ -152,26 +317,38 @@ const ARCTECH_DATA = {
     {
       id: "cnc-arch-1",
       title: "Heavy-Duty CNC Stone Milling Setup",
-      category: "arch",
+      category: "milling",
       categoryLabel: "In-House Manufacturing",
       material: "Italian Statuario Marble & Diamond Tooling",
       technique: "Multi-Axis CNC Milling with Flood Coolant Bed",
       image: "assets/images/cnc_pillar.jpg",
       description: "In-house precision CNC stone bridge machining with liquid coolant bed at our Jogeshwari facility, carving fluid 3D relief contours on clamped marble slabs."
-    },
-    {
-      id: "cnc-panel-2",
-      title: "Monolithic 3D CNC Marble Architectural Wall",
-      category: "stone",
-      categoryLabel: "3D Stone & Marble",
-      material: "Imported Italian Statuario Marble & Dark Oak",
-      technique: "Multi-Depth 3D Surface Profiling & Integrated LED Cove",
-      image: "assets/images/hero_bg.jpg",
-      description: "Monolithic precision-machined marble feature wall with fluid 3D relief contours and ambient cove lighting for luxury residential interiors in Mumbai."
     }
   ],
 
   projects: [
+    {
+      id: "arch-plan-1",
+      title: "Architectural CAD Drafting & 2D/3D Floor Plans",
+      category: "drawing",
+      categoryLabel: "Architectural Drawings & Plans",
+      location: "Design Studio — Jogeshwari West, Mumbai",
+      scope: "Spatial Layouts, Working Drawings & BOQ Planning",
+      materials: "CAD Drafting, 3D Spatial Wireframes, Structural Dimensions",
+      image: "assets/images/arch_drawing_plan.jpg",
+      description: "Comprehensive architectural layouts, structural dimensioning, spatial floor plans, and technical joinery schematics prepared for luxury residential and commercial spaces."
+    },
+    {
+      id: "arch-elev-1",
+      title: "Interior Elevation Drawings & 3D Sectional Visualization",
+      category: "elevation",
+      categoryLabel: "2D/3D Elevations & Sections",
+      location: "Design Studio — Mumbai",
+      scope: "2D Technical Elevations, Millwork Sections & 3D Renders",
+      materials: "Technical DWG Elevation Drawings & Photorealistic 3D Renders",
+      image: "assets/images/arch_elevation_3d.jpg",
+      description: "Millimeter-precision 2D wall elevations, ceiling cove sections, and photorealistic 3D interior visualizations ensuring seamless design-to-site execution."
+    },
     {
       id: "proj-1",
       title: "Penthouse Suite — Altamount Road",
@@ -180,7 +357,7 @@ const ARCTECH_DATA = {
       location: "Altamount Road, South Mumbai",
       scope: "Turnkey Interiors + Custom 3D CNC Travertine Wall",
       materials: "Travertine Stone, Smoked Oak, Champagne Bronze Trim",
-      image: "assets/images/interior_pillar.jpg",
+      image: "assets/images/hero_bg.jpg",
       description: "A 4,200 sq.ft luxury penthouse featuring an 18-foot monolithic CNC carved travertine wall, integrated cove lighting, and custom precision millwork."
     },
     {
@@ -206,15 +383,15 @@ const ARCTECH_DATA = {
       description: "Contemporary coastal luxury interior built with custom CNC fluted wooden transitions and warm vertical LED channels."
     },
     {
-      id: "proj-4",
-      title: "Signature 3D CNC Statuario Feature Wall",
-      category: "cnc",
-      categoryLabel: "CNC Manufacturing",
-      location: "Juhu, Mumbai",
-      scope: "3D CNC Stone Carving, Multi-Depth Wave Milling, Integrated Lighting",
-      materials: "Imported Italian Statuario Marble & Concealed Fasteners",
-      image: "assets/images/cnc_marble_carving.jpg",
-      description: "Bespoke architectural statement wall crafted from imported Statuario marble with continuous fluid 3D wave toolpaths and concealed structural mounting."
+      id: "proj-6",
+      title: "Luxury Duplex — Andheri West",
+      category: "residential",
+      categoryLabel: "Residential Turnkey",
+      location: "Lokhandwala, Andheri West, Mumbai",
+      scope: "Turnkey Renovation, CNC Geometric Screen, Full Millwork",
+      materials: "Champagne Brass, Statuario Marble, Matt Polyurethane",
+      image: "assets/images/cnc_jali_partition.jpg",
+      description: "Total interior overhaul uniting living, dining, and private suites with custom geometric CNC divider screen and bespoke joinery."
     },
     {
       id: "proj-5",
@@ -226,17 +403,6 @@ const ARCTECH_DATA = {
       materials: "Translucent Corian, Dark Smoked Oak, Polished Terrazzo",
       image: "assets/images/cnc_backlit_corian.jpg",
       description: "Sleek private firm lounge delivered turnkey with custom CNC-carved illuminated Corian wall sculpture."
-    },
-    {
-      id: "proj-6",
-      title: "Luxury Duplex — Andheri West",
-      category: "residential",
-      categoryLabel: "Residential Turnkey",
-      location: "Lokhandwala, Andheri West, Mumbai",
-      scope: "Turnkey Renovation, CNC Geometric Screen, Full Millwork",
-      materials: "Champagne Brass, Statuario Marble, Matt Polyurethane",
-      image: "assets/images/cnc_jali_partition.jpg",
-      description: "Total interior overhaul uniting living, dining, and private suites with custom geometric CNC divider screen and bespoke joinery."
     }
   ],
 
