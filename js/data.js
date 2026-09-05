@@ -153,21 +153,21 @@ const ARCTECH_DATA = {
       id: "cnc-arch-1",
       title: "Heavy-Duty CNC Stone Milling Setup",
       category: "arch",
-      categoryLabel: "Architectural Feature",
-      material: "Natural Travertine & CNC Diamond Cutters",
-      technique: "Multi-Axis Machining with Liquid Cooling",
+      categoryLabel: "In-House Manufacturing",
+      material: "Italian Statuario Marble & Diamond Tooling",
+      technique: "Multi-Axis CNC Milling with Flood Coolant Bed",
       image: "assets/images/cnc_pillar.jpg",
-      description: "In-house precision milling at our Minar Tower workshop, sculpting complex 3D contours with zero chipping."
+      description: "In-house precision CNC stone bridge machining with liquid coolant bed at our Jogeshwari facility, carving fluid 3D relief contours on clamped marble slabs."
     },
     {
       id: "cnc-panel-2",
       title: "Monolithic 3D CNC Marble Architectural Wall",
       category: "stone",
       categoryLabel: "3D Stone & Marble",
-      material: "Imported Italian Marble & Integrated Bronze Trim",
-      technique: "Multi-Depth 3D Surface Profiling & Laser Alignment",
+      material: "Imported Italian Statuario Marble & Dark Oak",
+      technique: "Multi-Depth 3D Surface Profiling & Integrated LED Cove",
       image: "assets/images/hero_bg.jpg",
-      description: "Monolithic precision-machined marble feature wall engineered and dry-fitted at our Minar Tower workshop for luxury residential interiors."
+      description: "Monolithic precision-machined marble feature wall with fluid 3D relief contours and ambient cove lighting for luxury residential interiors in Mumbai."
     }
   ],
 

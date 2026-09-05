@@ -91,6 +91,16 @@ function initBeforeAfterSlider() {
     handle.style.left = `${percent}%`;
   };
 
+  const syncImageWidth = () => {
+    const innerImg = overlay.querySelector('.ba-image');
+    if (innerImg) {
+      innerImg.style.width = `${container.offsetWidth}px`;
+    }
+  };
+
+  window.addEventListener('resize', syncImageWidth, { passive: true });
+  syncImageWidth();
+
   // Mouse Events
   container.addEventListener('mousedown', (e) => {
     isDragging = true;
