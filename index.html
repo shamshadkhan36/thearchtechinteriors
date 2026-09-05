@@ -1021,6 +1021,106 @@
   </div>
 
   <!-- ==========================================================================
+       Welcome Gateway Modal (Dual Split: CNC Manufacturing vs Architecture & Interiors)
+       ========================================================================== -->
+  <div id="welcome-modal" class="welcome-modal-backdrop" role="dialog" aria-modal="true" aria-label="Welcome to ArcTech Interior LLP">
+    <div class="welcome-modal-card">
+      <button id="welcome-modal-close" class="welcome-close-btn" aria-label="Close welcome modal">&times;</button>
+      
+      <!-- Top Branding Header -->
+      <div class="welcome-header">
+        <img src="assets/images/logo.png" alt="ArcTech Interior LLP Logo" class="welcome-logo-img" />
+        <p class="welcome-subheading">Welcome to ArcTech • Select your division to explore specialized portfolios</p>
+      </div>
+
+      <!-- Dual Split Cards Container -->
+      <div class="welcome-split-grid">
+        
+        <!-- LEFT SLIDE / CARD: CNC MANUFACTURING -->
+        <div class="welcome-card welcome-card-cnc" onclick="selectWelcomeDivision('cnc')">
+          <div class="welcome-card-media">
+            <!-- Slide images with auto crossfade -->
+            <img src="assets/images/cnc_marble_carving.jpg" alt="3D Stone Carving" class="w-slide-img active" data-cnc-slide="0" />
+            <img src="assets/images/cnc_jali_partition.jpg" alt="CNC Jali Partition" class="w-slide-img" data-cnc-slide="1" />
+            <img src="assets/images/cnc_pillar.jpg" alt="CNC Machining Setup" class="w-slide-img" data-cnc-slide="2" />
+            <div class="welcome-media-overlay"></div>
+            <div class="welcome-badge-float">
+              <span class="badge-tech">⚙️ FOLDER 01 • IN-HOUSE</span>
+            </div>
+            <div class="welcome-slide-dots">
+              <span class="w-dot active"></span>
+              <span class="w-dot"></span>
+              <span class="w-dot"></span>
+            </div>
+          </div>
+          <div class="welcome-card-body">
+            <div>
+              <h3 class="welcome-card-title">CNC Manufacturing</h3>
+              <p class="welcome-card-tagline">3D Stone Carving, Jali Screens, Wood Fluting & Corian</p>
+              <ul class="welcome-card-features">
+                <li><span>✔</span> 3D Relief Carving in Monolithic Italian & Indian Marble</li>
+                <li><span>✔</span> Laser-Calibrated Geometric & Floral Jali Partition Screens</li>
+                <li><span>✔</span> Custom Acoustic Fluted Wood Baffles & Tambour Slats</li>
+                <li><span>✔</span> Backlit Translucent Corian Wall Sculptures</li>
+                <li><span>✔</span> Direct Heavy-Duty CNC Multi-Axis Milling in Mumbai</li>
+              </ul>
+            </div>
+            <button class="btn-primary welcome-enter-btn" onclick="event.stopPropagation(); selectWelcomeDivision('cnc')">
+              <span>Explore CNC Works</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT SLIDE / CARD: ARCHITECTURE & INTERIORS -->
+        <div class="welcome-card welcome-card-interiors" onclick="selectWelcomeDivision('interiors')">
+          <div class="welcome-card-media">
+            <!-- Slide images with auto crossfade -->
+            <img src="assets/images/arch_drawing_plan.jpg" alt="Architectural CAD Plans" class="w-slide-img active" data-int-slide="0" />
+            <img src="assets/images/arch_elevation_3d.jpg" alt="2D/3D Elevations" class="w-slide-img" data-int-slide="1" />
+            <img src="assets/images/interior_pillar.jpg" alt="Luxury Interior Execution" class="w-slide-img" data-int-slide="2" />
+            <div class="welcome-media-overlay"></div>
+            <div class="welcome-badge-float">
+              <span class="badge-tech">🏛️ FOLDER 02 • DESIGN & FITOUT</span>
+            </div>
+            <div class="welcome-slide-dots">
+              <span class="w-dot active"></span>
+              <span class="w-dot"></span>
+              <span class="w-dot"></span>
+            </div>
+          </div>
+          <div class="welcome-card-body">
+            <div>
+              <h3 class="welcome-card-title">Architecture & Interiors</h3>
+              <p class="welcome-card-tagline">CAD Floor Plans, 2D/3D Elevations & Turnkey Fitouts</p>
+              <ul class="welcome-card-features">
+                <li><span>✔</span> Architectural CAD 2D/3D Working Floor Plans & Layouts</li>
+                <li><span>✔</span> Dimensioned 2D Wall Elevations & 3D Sectional Renders</li>
+                <li><span>✔</span> Turnkey Luxury Residences & Penthouse Fitouts</li>
+                <li><span>✔</span> BKC Corporate Offices, Boardrooms & Retail Spaces</li>
+                <li><span>✔</span> Complete End-to-End Civil, Joinery & Turnkey Handover</li>
+              </ul>
+            </div>
+            <button class="btn-primary welcome-enter-btn" onclick="event.stopPropagation(); selectWelcomeDivision('interiors')">
+              <span>Explore Architecture & Interiors</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Skip Option -->
+      <div class="welcome-footer">
+        <button id="welcome-skip-btn" class="welcome-skip-link">
+          Continue to Website Homepage &darr;
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
        Modal / Lightbox
        ========================================================================== -->
   <div id="global-modal" class="modal-backdrop" role="dialog" aria-modal="true">

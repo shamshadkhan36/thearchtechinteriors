@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDivisionHub();
   initInquiryForm();
   initModal();
+  initWelcomeModal();
   initSmoothScroll();
 });
 
@@ -493,4 +494,76 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+/* ==========================================================================
+   9. Automatic Welcome Gateway Modal (Dual CNC & Interiors Slides)
+   ========================================================================== */
+function initWelcomeModal() {
+  const welcomeModal = document.getElementById('welcome-modal');
+  const closeBtn = document.getElementById('welcome-modal-close');
+  const skipBtn = document.getElementById('welcome-skip-btn');
+
+  if (!welcomeModal) return;
+
+  const openModal = () => {
+    welcomeModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    welcomeModal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  // Close event listeners
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (skipBtn) skipBtn.addEventListener('click', closeModal);
+  welcomeModal.addEventListener('click', (e) => {
+    if (e.target === welcomeModal) closeModal();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && welcomeModal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // Global selection function for clicking CNC or Interiors card / button
+  window.selectWelcomeDivision = (divisionId) => {
+    closeModal();
+    if (typeof window.switchDivision === 'function') {
+      window.switchDivision(divisionId, true);
+    }
+  };
+
+  // Auto-slideshow for preview images inside both cards
+  const initMiniSlideShow = (slideAttr, dotSelector) => {
+    const slides = welcomeModal.querySelectorAll(`[${slideAttr}]`);
+    const dots = welcomeModal.querySelectorAll(dotSelector);
+    if (slides.length <= 1) return;
+
+    let currentIndex = 0;
+    setInterval(() => {
+      slides[currentIndex].classList.remove('active');
+      if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+      currentIndex = (currentIndex + 1) % slides.length;
+
+      slides[currentIndex].classList.add('active');
+      if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+    }, 3200);
+  };
+
+  initMiniSlideShow('data-cnc-slide', '.welcome-card-cnc .w-dot');
+  initMiniSlideShow('data-int-slide', '.welcome-card-interiors .w-dot');
+
+  // Automatically open modal when visitor lands on website
+  setTimeout(() => {
+    openModal();
+  }, 450);
+
+  // Global helpers
+  window.openWelcomeModal = openModal;
+  window.closeWelcomeModal = closeModal;
 }
